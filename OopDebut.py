@@ -19,6 +19,7 @@ class Cake:
 
     def cut_in_part(self):
         print('gâteau découpé en 4 parts !')
+        pass
 
 
 rect1 = Rectangle(4, 2)
@@ -116,8 +117,48 @@ class Square(Shape):
         self.length = length
 
     def area(self):
-        return self.length**2
+        return self.length ** 2
 
 
+# Object in Array
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def walk(self):
+        print(self.name, "marche.")
 
 
+volunteers = [Person('Alice'), Person("Jack"), Person('Tom')]
+for volunteer in volunteers:
+    volunteer.walk()
+
+
+# Handle exceptions before run a function
+def divide(a, b):
+    assert b != 0
+    return a / b
+
+
+# print(divide(2, 0))
+print(divide(2, 2))
+
+
+# To verify type of object
+class Lion:
+    def __init__(self):
+        pass
+
+    def run(self):
+        print("run, run, run ...")
+        pass
+
+
+lion = Lion()
+
+for volunteer in volunteers:
+    if hasattr(volunteer, "walk"):
+        volunteer.walk()
+
+if not isinstance(lion, Person):
+    raise print("It's not instance of Person class")
